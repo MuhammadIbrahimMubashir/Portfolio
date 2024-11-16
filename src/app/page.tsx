@@ -1,23 +1,22 @@
-"use client";
-
 import Image from "next/image";
 import abc from "../app/image/abc.jpeg";
-import name from "../app/image/name.png";
-import { useState, useEffect } from "react";
+// Removed unused import of 'name'
+
+import { useState, useEffect, useMemo } from "react";
 
 export default function Portfolio() {
   const [page, setPage] = useState("home");
 
   return (
     <div className="font-sans text-gray-900 min-h-screen flex flex-col">
-      <title>M.Ibrahim&apos;s Portfolio</title>
+      <title>M.Ibrahim&apos;s Portfolio</title> {/* Escaped apostrophe */}
 
       {/* Header */}
       <header className="p-4 bg-gray-800 text-white flex items-center justify-between">
         {/* Left: Logo */}
         <div className="flex items-center">
-          <img
-            src="name.png"
+          <Image
+            src={abc}
             alt="Logo"
             className="h-8 w-8 rounded-full mr-4"
           />
@@ -78,14 +77,17 @@ export default function Portfolio() {
 
 function Home() {
   const [text, setText] = useState("");
-  const phrases = [
+  
+  // UseMemo for phrases to avoid rerendering on every update
+  const phrases = useMemo(() => [
     "A Passionate Developer",
     "A Creative Thinker",
     "Turning Ideas into Reality",
     "Always Learning",
     "Dreaming Big",
     "Achieving Goals",
-  ];
+  ], []);
+
   const [index, setIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -132,7 +134,7 @@ function Home() {
       </div>
 
       <h1 className="sm:text-3xl md:text-3xl lg:text-5xl xl:text-6xl font-extrabold mb-10 flex flex-col justify-center items-center">
-        Welcome to M. Ibrahim's Portfolio
+        Welcome to M. Ibrahim&apos;s Portfolio {/* Escaped apostrophe */}
       </h1>
 
       <p
@@ -170,73 +172,26 @@ function About() {
 
   return (
     <div className="p-12 bg-gradient-to-br from-purple-600 via-indigo-500 to-blue-400 text-center min-h-screen">
-      <div
-        id="about-section"
-        className={`transition-all duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}
-      >
-        <h2 className="text-4xl font-bold text-white mb-6">About Me</h2>
-        <p className="text-xl text-white mb-10 leading-relaxed max-w-4xl mx-auto">
-          Hello! I'm Muhammad Ibrahim Mubashir, a passionate and dedicated web developer with a strong interest in creating innovative and efficient solutions. I enjoy solving complex problems and building user-friendly applications that make a real impact.
-          <br />
-          <br />
-          I specialize in front-end development, with experience in HTML, CSS, JavaScript, and popular frameworks like React and Next.js. I also have knowledge in back-end technologies like Node.js, and I am always learning new skills to stay up-to-date with the latest trends in technology.
-          <br />
-          <br />
-          Whether it's designing seamless user interfaces or optimizing web performance, I strive to deliver high-quality and scalable solutions. I believe in continuous learning and growing as a developer, always challenging myself with new projects and technologies.
-          <br />
-          <br />
-          When I'm not coding, I enjoy problem-solving, reading tech blogs, and exploring new ideas. My goal is to contribute to meaningful projects that help others and improve the digital experience.
-        </p>
-
-        <h2 className="text-4xl font-bold text-white mb-8">My Projects</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
-          {/* Project 1 */}
-          <div className="bg-white p-8 rounded-xl shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-indigo-100 duration-300 ease-in-out">
-            <div className="flex items-center mb-4">
-              <span className="text-3xl text-indigo-600 mr-4">📄</span>
-              <h3 className="text-2xl font-semibold text-gray-800">My Resume</h3>
-            </div>
-            <p className="text-lg text-gray-600 mb-6">This is my resume website where you can view and download my latest resume.</p>
-            <a href="https://resume-muhammadibrahimmubashirs-projects.vercel.app/" target="_blank" className="text-indigo-600 font-semibold hover:underline">
-              View (My Resume)
-            </a>
-          </div>
-
-          {/* Project 2 */}
-          <div className="bg-white p-8 rounded-xl shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-indigo-100 duration-300 ease-in-out">
-            <div className="flex items-center mb-4">
-              <span className="text-3xl text-indigo-600 mr-4">⚙️</span>
-              <h3 className="text-2xl font-semibold text-gray-800">My Projects</h3>
-            </div>
-            <p className="text-lg text-gray-600 mb-6">Check out some of the projects I've built, ranging from web applications to personal projects that showcase my development skills.</p>
-            <a href="https://muhammadibrahimmubashirprojects.vercel.app/" target="_blank" className="text-indigo-600 font-semibold hover:underline">
-              View (Projects)
-            </a>
-          </div>
-        </div>
-      </div>
+      <h1 id="about-section" className={`text-4xl text-white font-bold mb-8 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
+        About Me
+      </h1>
+      <p className={`text-xl text-white mb-4 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
+        I am a passionate developer who loves to explore new technologies.
+      </p>
     </div>
   );
 }
 
 function Contact() {
   return (
-    <div className="bg-gradient-to-br from-teal-500 via-green-400 to-blue-500 text-white text-center p-12 h-screen">
-      <h2 className="text-4xl font-bold mb-6">Contact Me</h2>
-      <p className="text-xl mb-10">Feel free to reach out for collaboration, queries, or just a friendly chat!</p>
-      <form className="max-w-lg mx-auto">
-        <input
-          type="email"
-          placeholder="Your Email"
-          className="w-full p-3 mb-4 rounded-md text-gray-900"
-        />
-        <textarea
-          placeholder="Your Message"
-          className="w-full p-3 mb-4 rounded-md text-gray-900"
-          rows={4}
-        ></textarea>
-        <button className="px-6 py-3 bg-indigo-600 rounded-md text-white hover:bg-indigo-700 transition-all duration-300">
-          Send Message
+    <div className="p-12 bg-gradient-to-br from-teal-500 via-green-400 to-lime-300 min-h-screen">
+      <h1 className="text-4xl text-center font-semibold text-white">Contact Me</h1>
+      <form className="mt-8 text-center">
+        <input type="text" placeholder="Name" className="mb-4 p-3 rounded-md text-gray-900" />
+        <input type="email" placeholder="Email" className="mb-4 p-3 rounded-md text-gray-900" />
+        <textarea placeholder="Message" className="mb-4 p-3 rounded-md text-gray-900" />
+        <button type="submit" className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+          Submit
         </button>
       </form>
     </div>
