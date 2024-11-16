@@ -3,7 +3,7 @@
 import Image from "next/image";
 import abc from "../app/image/abc.jpeg";
 import name from "../app/image/name.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 export default function Portfolio() {
   const [page, setPage] = useState("home");
