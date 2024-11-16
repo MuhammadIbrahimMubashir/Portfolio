@@ -3,7 +3,7 @@
 import Image from "next/image";
 import abc from "../app/image/abc.jpeg";
 import name from "../app/image/name.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 export default function Portfolio() {
   const [page, setPage] = useState("home");
@@ -74,25 +74,25 @@ export default function Portfolio() {
 
 function Home() {
   const [text, setText] = useState("");
-  const phrases = [
+  const [index, setIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [speed, setSpeed] = useState(200);
+
+  const phrases = useMemo(() => [
     "A Passionate Developer",
     "A Creative Thinker",
     "Turning Ideas into Reality",
     "Always Learning",
     "Dreaming Big",
     "Achieving Goals",
-  ];
-  const [index, setIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [speed, setSpeed] = useState(200);
+  ], []);
 
   useEffect(() => {
     const typeEffect = setTimeout(() => {
       const currentPhrase = phrases[index];
 
       if (!isDeleting) {
-        // Typing Effect
         setText(currentPhrase.slice(0, charIndex + 1));
         setCharIndex((prev) => prev + 1);
         if (charIndex + 1 === currentPhrase.length) {
@@ -100,7 +100,6 @@ function Home() {
           setSpeed(1200); // Pause before deleting
         }
       } else {
-        // Deleting Effect
         setText(currentPhrase.slice(0, charIndex - 1));
         setCharIndex((prev) => prev - 1);
         if (charIndex - 1 === 0) {
@@ -117,12 +116,11 @@ function Home() {
   return (
     <div className="bg-gradient-to-r from-indigo-500 to-blue-600 min-h-screen">
       <div className="mb-2 px-6 py-10 justify-center">
-        {/* Image Section */}
         <Image
           src={abc}
           alt="M. Ibrahim Mubashir"
-          width={350} // Adjust the size as needed
-          height={350} // Adjust the size as needed
+          width={350}
+          height={350}
           className="rounded-3xl mx-auto shadow-xl"
         />
       </div>
@@ -136,7 +134,7 @@ function Home() {
         style={{
           paddingLeft: "10px",
           letterSpacing: "2px",
-          height: "40px", // Fixed height to prevent layout shift
+          height: "40px", 
         }}
       >
         {text}
@@ -174,52 +172,25 @@ function About() {
           Hello! I'm Muhammad Ibrahim Mubashir, a passionate and dedicated web developer with a strong interest in creating innovative and efficient solutions. I enjoy solving complex problems and building user-friendly applications that make a real impact.
           <br />
           <br />
-          I specialize in front-end development, with experience in HTML, CSS, JavaScript, and popular frameworks like React and Next.js. I also have knowledge in back-end technologies like Node.js, and I am always learning new skills to stay up-to-date with the latest trends in technology.
+          I specialize in front-end development with a focus on React.js, HTML, CSS, and JavaScript. I am also proficient in back-end technologies like Node.js and Express.js, and I have experience with databases such as MongoDB and MySQL.
           <br />
           <br />
-          Whether it's designing seamless user interfaces or optimizing web performance, I strive to deliver high-quality and scalable solutions. I believe in continuous learning and growing as a developer, always challenging myself with new projects and technologies.
-          <br />
-          <br />
-          When I'm not coding, I enjoy problem-solving, reading tech blogs, and exploring new ideas. My goal is to contribute to meaningful projects that help others and improve the digital experience.
+          My goal is to continue growing as a developer, learning new technologies, and contributing to meaningful projects.
         </p>
-
-        <h2 className="text-4xl font-bold text-white mb-8">My Projects</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
-          {/* Project 1 */}
-          <div className="bg-white p-8 rounded-xl shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-indigo-100 duration-300 ease-in-out">
-            <div className="flex items-center mb-4">
-              <span className="text-3xl text-indigo-600 mr-4">📄</span>
-              <h3 className="text-2xl font-semibold text-gray-800">My Resume</h3>
-            </div>
-            <p className="text-lg text-gray-600 mb-6">
-              This is my resume website where you can view and download my latest resume.
-            </p>
-            <a
-              href="https://resume-muhammadibrahimmubashirs-projects.vercel.app/"
-              target="_blank"
-              className="text-indigo-600 font-semibold hover:underline"
-            >
-              View (My Resume)
-            </a>
-          </div>
-
-          {/* Project 2 */}
-          <div className="bg-white p-8 rounded-xl shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-indigo-100 duration-300 ease-in-out">
-            <div className="flex items-center mb-4">
-              <span className="text-3xl text-indigo-600 mr-4">⚙️</span>
-              <h3 className="text-2xl font-semibold text-gray-800">My Projects</h3>
-            </div>
-            <p className="text-lg text-gray-600 mb-6">
-              Check out some of the projects I've built, ranging from web applications to personal projects that showcase my development skills.
-            </p>
-            <a
-              href="https://muhammadibrahimmubashirprojects.vercel.app/"
-              target="_blank"
-              className="text-indigo-600 font-semibold hover:underline"
-            >
-              View (Projects)
-            </a>
-          </div>
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a
+            href="#"
+            className="bg-indigo-600 text-white px-6 py-3 rounded-full shadow-lg transition-all duration-300 hover:bg-indigo-700"
+          >
+            View My Resume
+          </a>
+          <a
+            href="https://muhammadibrahimmubashirprojects.vercel.app/"
+            target="_blank"
+            className="text-indigo-600 font-semibold hover:underline"
+          >
+            View Projects
+          </a>
         </div>
       </div>
     </div>
