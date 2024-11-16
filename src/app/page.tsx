@@ -179,16 +179,16 @@ function About() {
       >
         <h2 className="text-4xl font-bold text-white mb-6">About Me</h2>
         <p className="text-xl text-white mb-10 leading-relaxed max-w-4xl mx-auto">
-          Hello! I'm Muhammad Ibrahim Mubashir, a passionate and dedicated web developer with a strong interest in creating innovative and efficient solutions. I enjoy solving complex problems and building user-friendly applications that make a real impact.
+          Hello! I&apos;m Muhammad Ibrahim Mubashir, a passionate and dedicated web developer with a strong interest in creating innovative and efficient solutions. I enjoy solving complex problems and building user-friendly applications that make a real impact.
           <br />
           <br />
           I specialize in front-end development, with experience in HTML, CSS, JavaScript, and popular frameworks like React and Next.js. I also have knowledge in back-end technologies like Node.js, and I am always learning new skills to stay up-to-date with the latest trends in technology.
           <br />
           <br />
-          Whether it's designing seamless user interfaces or optimizing web performance, I strive to deliver high-quality and scalable solutions. I believe in continuous learning and growing as a developer, always challenging myself with new projects and technologies.
+          Whether it&apos;s designing seamless user interfaces or optimizing web performance, I strive to deliver high-quality and scalable solutions. I believe in continuous learning and growing as a developer, always challenging myself with new projects and technologies.
           <br />
           <br />
-          When I'm not coding, I enjoy problem-solving, reading tech blogs, and exploring new ideas. My goal is to contribute to meaningful projects that help others and improve the digital experience.
+          When I&apos;m not coding, I enjoy problem-solving, reading tech blogs, and exploring new ideas. My goal is to contribute to meaningful projects that help others and improve the digital experience.
         </p>
 
         <h2 className="text-4xl font-bold text-white mb-8">My Projects</h2>
@@ -211,7 +211,7 @@ function About() {
               <span className="text-3xl text-indigo-600 mr-4">⚙️</span>
               <h3 className="text-2xl font-semibold text-gray-800">My Projects</h3>
             </div>
-            <p className="text-lg text-gray-600 mb-6">Check out some of the projects I've built, ranging from web applications to personal projects that showcase my development skills.</p>
+            <p className="text-lg text-gray-600 mb-6">Check out some of the projects I&apos;ve built, ranging from web applications to personal projects that showcase my development skills.</p>
             <a href="https://muhammadibrahimmubashirprojects.vercel.app/" target="_blank" className="text-indigo-600 font-semibold hover:underline">
               View (Projects)
             </a>
