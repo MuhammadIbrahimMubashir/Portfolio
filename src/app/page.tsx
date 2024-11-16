@@ -16,11 +16,7 @@ export default function Portfolio() {
       <header className="p-4 bg-gray-800 text-white flex items-center justify-between">
         {/* Left: Logo */}
         <div className="flex items-center">
-          <Image
-            src={name}
-            alt="Logo"
-            className="h-8 w-8 rounded-full mr-4"
-          />
+          <Image src={name} alt="Logo" className="h-8 w-8 rounded-full mr-4" />
         </div>
 
         {/* Centered: Navigation buttons */}
@@ -63,7 +59,7 @@ export default function Portfolio() {
 
           {/* Center: Tagline */}
           <div className="text-sm opacity-75">
-            <pre>             A Passionate Web Developer</pre>
+            <pre> A Passionate Web Developer</pre>
           </div>
 
           {/* Right: Copyright */}
@@ -152,19 +148,18 @@ function Home() {
 function About() {
   const [fadeIn, setFadeIn] = useState(false);
 
-  // Scroll effect for fade-in
   useEffect(() => {
     const handleScroll = () => {
-      const aboutSection = document.getElementById('about-section');
+      const aboutSection = document.getElementById("about-section");
 
       if (aboutSection && aboutSection.getBoundingClientRect().top < window.innerHeight) {
         setFadeIn(true);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -172,7 +167,7 @@ function About() {
     <div className="p-12 bg-gradient-to-br from-purple-600 via-indigo-500 to-blue-400 text-center min-h-screen">
       <div
         id="about-section"
-        className={`transition-all duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}
+        className={`transition-all duration-1000 ${fadeIn ? "opacity-100" : "opacity-0"}`}
       >
         <h2 className="text-4xl font-bold text-white mb-6">About Me</h2>
         <p className="text-xl text-white mb-10 leading-relaxed max-w-4xl mx-auto">
@@ -196,8 +191,14 @@ function About() {
               <span className="text-3xl text-indigo-600 mr-4">📄</span>
               <h3 className="text-2xl font-semibold text-gray-800">My Resume</h3>
             </div>
-            <p className="text-lg text-gray-600 mb-6">This is my resume website where you can view and download my latest resume.</p>
-            <a href="https://resume-muhammadibrahimmubashirs-projects.vercel.app/" target="_blank" className="text-indigo-600 font-semibold hover:underline">
+            <p className="text-lg text-gray-600 mb-6">
+              This is my resume website where you can view and download my latest resume.
+            </p>
+            <a
+              href="https://resume-muhammadibrahimmubashirs-projects.vercel.app/"
+              target="_blank"
+              className="text-indigo-600 font-semibold hover:underline"
+            >
               View (My Resume)
             </a>
           </div>
@@ -208,8 +209,14 @@ function About() {
               <span className="text-3xl text-indigo-600 mr-4">⚙️</span>
               <h3 className="text-2xl font-semibold text-gray-800">My Projects</h3>
             </div>
-            <p className="text-lg text-gray-600 mb-6">Check out some of the projects I've built, ranging from web applications to personal projects that showcase my development skills.</p>
-            <a href="https://muhammadibrahimmubashirprojects.vercel.app/" target="_blank" className="text-indigo-600 font-semibold hover:underline">
+            <p className="text-lg text-gray-600 mb-6">
+              Check out some of the projects I've built, ranging from web applications to personal projects that showcase my development skills.
+            </p>
+            <a
+              href="https://muhammadibrahimmubashirprojects.vercel.app/"
+              target="_blank"
+              className="text-indigo-600 font-semibold hover:underline"
+            >
               View (Projects)
             </a>
           </div>
@@ -221,24 +228,12 @@ function About() {
 
 function Contact() {
   return (
-    <div className="bg-gradient-to-br from-teal-500 via-green-400 to-blue-500 text-white text-center p-12 h-screen">
-      <h2 className="text-4xl font-bold mb-6">Contact Me</h2>
-      <p className="text-xl mb-10">Feel free to reach out for collaboration, queries, or just a friendly chat!</p>
-      <form className="max-w-lg mx-auto">
-        <input
-          type="email"
-          placeholder="Your Email"
-          className="w-full p-3 mb-4 rounded-md text-gray-900"
-        />
-        <textarea
-          placeholder="Your Message"
-          className="w-full p-3 mb-4 rounded-md text-gray-900"
-          rows={4}
-        ></textarea>
-        <button className="px-6 py-3 bg-indigo-600 rounded-md text-white hover:bg-indigo-700 transition-all duration-300">
-          Send Message
-        </button>
-      </form>
+    <div className="bg-gradient-to-br from-green-500 via-teal-500 to-blue-500 text-center min-h-screen p-12">
+      <h2 className="text-4xl font-bold text-white mb-6">Contact Me</h2>
+      <p className="text-xl text-white mb-10 max-w-4xl mx-auto">
+        Feel free to reach out to me via email at
+        <span className="text-indigo-300"> example@mail.com</span>
+      </p>
     </div>
   );
 }
