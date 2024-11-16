@@ -76,16 +76,21 @@ export default function Portfolio() {
   );
 }
 
+import { useState, useEffect, useMemo } from "react";
+
 function Home() {
   const [text, setText] = useState("");
-  const phrases = [
+  
+  // Wrap the phrases array with useMemo
+  const phrases = useMemo(() => [
     "A Passionate Developer",
     "A Creative Thinker",
     "Turning Ideas into Reality",
     "Always Learning",
     "Dreaming Big",
     "Achieving Goals",
-  ];
+  ], []);
+
   const [index, setIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -132,7 +137,7 @@ function Home() {
       </div>
 
       <h1 className="sm:text-3xl md:text-3xl lg:text-5xl xl:text-6xl font-extrabold mb-10 flex flex-col justify-center items-center">
-        Welcome to M. Ibrahim's Portfolio
+        Welcome to M. Ibrahim&apos;s Portfolio
       </h1>
 
       <p
