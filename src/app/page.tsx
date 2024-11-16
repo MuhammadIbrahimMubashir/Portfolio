@@ -126,7 +126,7 @@ function Home() {
       </div>
 
       <h1 className="sm:text-3xl md:text-3xl lg:text-5xl xl:text-6xl font-extrabold mb-10 flex flex-col justify-center items-center">
-        Welcome to M. Ibrahim's Portfolio
+        Welcome to M. Ibrahim&apos;s Portfolio
       </h1>
 
       <p
@@ -169,7 +169,7 @@ function About() {
       >
         <h2 className="text-4xl font-bold text-white mb-6">About Me</h2>
         <p className="text-xl text-white mb-10 leading-relaxed max-w-4xl mx-auto">
-          Hello! I'm Muhammad Ibrahim Mubashir, a passionate and dedicated web developer with a strong interest in creating innovative and efficient solutions. I enjoy solving complex problems and building user-friendly applications that make a real impact.
+          Hello! I&apos;m Muhammad Ibrahim Mubashir, a passionate and dedicated web developer with a strong interest in creating innovative and efficient solutions. I enjoy solving complex problems and building user-friendly applications that make a real impact.
           <br />
           <br />
           I specialize in front-end development with a focus on React.js, HTML, CSS, and JavaScript. I am also proficient in back-end technologies like Node.js and Express.js, and I have experience with databases such as MongoDB and MySQL.
