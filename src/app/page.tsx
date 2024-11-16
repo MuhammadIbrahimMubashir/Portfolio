@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import abc from "../app/image/abc.jpeg";
 // Removed unused import of 'name'
