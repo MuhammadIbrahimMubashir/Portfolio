@@ -186,14 +186,22 @@ function About() {
 
 function Contact() {
   return (
-    <div className="p-12 bg-gradient-to-br from-teal-500 via-green-400 to-lime-300 min-h-screen">
-      <h1 className="text-4xl text-center font-semibold text-white">Contact Me</h1>
-      <form className="mt-8 text-center">
-        <input type="text" placeholder="Name" className="mb-4 p-3 rounded-md text-gray-900" />
-        <input type="email" placeholder="Email" className="mb-4 p-3 rounded-md text-gray-900" />
-        <textarea placeholder="Message" className="mb-4 p-3 rounded-md text-gray-900" />
-        <button type="submit" className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
-          Submit
+    <div className="bg-gradient-to-br from-teal-500 via-green-400 to-blue-500 text-white text-center p-12 h-screen">
+      <h2 className="text-4xl font-bold mb-6">Contact Me</h2>
+      <p className="text-xl mb-10">Feel free to reach out for collaboration, queries, or just a friendly chat!</p>
+      <form className="max-w-lg mx-auto">
+        <input
+          type="email"
+          placeholder="Your Email"
+          className="w-full p-3 mb-4 rounded-md text-gray-900"
+        />
+        <textarea
+          placeholder="Your Message"
+          className="w-full p-3 mb-4 rounded-md text-gray-900"
+          rows={4}
+        ></textarea>
+        <button className="px-6 py-3 bg-indigo-600 rounded-md text-white hover:bg-indigo-700 transition-all duration-300">
+          Send Message
         </button>
       </form>
     </div>
