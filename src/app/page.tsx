@@ -206,14 +206,14 @@ function About() {
           </div>
 
           {/* Project 2 */}
-          <div className="bg-white p-8 rounded-xl shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-indigo-100 duration-300 ease-in-out">
+         <div className="bg-white p-8 rounded-xl shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-indigo-100 duration-300 ease-in-out">
             <div className="flex items-center mb-4">
               <span className="text-3xl text-indigo-600 mr-4">⚙️</span>
-              <h3 className="text-2xl font-semibold text-gray-800">My Projects</h3>
+              <h3 className="text-2xl font-semibold text-gray-800">Dynamic Resume Builder</h3>
             </div>
-            <p className="text-lg text-gray-600 mb-6">Check out some of the projects I&apos;ve built, ranging from web applications to personal projects that showcase my development skills.</p>
-            <a href="https://muhammadibrahimmubashirprojects.vercel.app/" target="_blank" className="text-indigo-600 font-semibold hover:underline">
-              View (Projects)
+            <p className="text-lg text-gray-600 mb-6">This is my dynamic resume builder that lets you create custom resumes online.</p>
+            <a href="https://dynamic-resume-builder-opal.vercel.app/" target="_blank" className="text-indigo-600 font-semibold hover:underline">
+              View (Dynamic Resume Builder)
             </a>
           </div>
         </div>
