@@ -76,8 +76,6 @@ export default function Portfolio() {
   );
 }
 
-import { useState, useEffect, useMemo } from "react";
-
 function Home() {
   const [text, setText] = useState("");
   
