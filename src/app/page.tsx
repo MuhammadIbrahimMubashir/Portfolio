@@ -10,14 +10,14 @@ export default function Portfolio() {
 
   return (
     <div className="font-sans text-gray-900 min-h-screen flex flex-col">
-      <title>M.Ibrahim Portfolio</title>
+      <title>M.Ibrahim&apos;s Portfolio</title>
 
       {/* Header */}
       <header className="p-4 bg-gray-800 text-white flex items-center justify-between">
         {/* Left: Logo */}
         <div className="flex items-center">
-          <Image
-            src={name}
+          <img
+            src="name.png"
             alt="Logo"
             className="h-8 w-8 rounded-full mr-4"
           />
